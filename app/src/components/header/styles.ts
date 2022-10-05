@@ -17,6 +17,7 @@ export const LinksWrapper = styled.div`
 export const Img = styled.img`
   max-width: 100%;
   max-height: 100%;
+  width: 60px;
 `;
 
 export const LinkStyled = styled(Link)`

@@ -12,5 +12,13 @@
     "browser": true,
     "jest": true,
     "node": true
-  }
+  },
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "rules": {
+        "no-undef": "off"
+      }
+    }
+  ]
 }
