@@ -1,14 +1,18 @@
 import React from "react";
-import { Container } from "@mui/material";
+import { Box, Container } from "@mui/material";
 import Header from "./components/header";
 import Home from "./pages/home";
+import Footer from "./components/footer";
 
 function App() {
   return (
-    <Container maxWidth="xl">
+    <Box display="flex" flexDirection="column" gap={3}>
       <Header />
-      <Home />
-    </Container>
+      <Container maxWidth="xl">
+        <Home />
+      </Container>
+      <Footer />
+    </Box>
   );
 }
 
