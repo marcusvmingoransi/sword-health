@@ -7,14 +7,11 @@ import ArticleList from "../../components/article-list";
 import { ARTICLES } from "../../utils/constants";
 import Footer from "../../components/footer";
 import Header from "../../components/header";
-import { useAuth } from "../../context/auth-context";
 
 const Home = () => {
-  const { token } = useAuth();
   return (
     <Box display="flex" flexDirection="column" gap={3}>
       <Header />
-      <div>Authenticated as {token}</div>
       <Container maxWidth="xl">
         <Grid container gap={3}>
           <Grid xs={12} container>

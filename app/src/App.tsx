@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import PrivateRoute from "./components/private-route";
 import { AuthProvider } from "./context/auth-context";
 
 const Login = React.lazy(() => import("./pages/login"));
@@ -18,8 +19,22 @@ const App = () => {
         <AuthProvider>
           <Routes>
             <Route path="/" element={<Login />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="article-submission" element={<ArticleSubmission />} />
+            <Route
+              path="/home"
+              element={
+                <PrivateRoute>
+                  <Home />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="article-submission"
+              element={
+                <PrivateRoute>
+                  <ArticleSubmission />
+                </PrivateRoute>
+              }
+            />
             <Route path="*" element={<AccessDenied />} />
           </Routes>
         </AuthProvider>

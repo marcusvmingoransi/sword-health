@@ -1,6 +1,6 @@
 import React from "react";
 import { createContext, ReactNode, useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { fakeAuth } from "../utils/helpers";
 
 interface IAuthProvider {
@@ -22,13 +22,16 @@ const AuthContext = createContext(INITIAL_VALUES);
 
 export const AuthProvider = ({ children }: IAuthProvider) => {
   const navigate = useNavigate();
+  const location = useLocation();
 
   const [token, setToken] = useState("");
 
   const handleLogin = async () => {
     const token = await fakeAuth();
     setToken(String(token));
-    navigate("/home");
+
+    const origin = location.state?.from?.pathname || "/home";
+    navigate(origin);
   };
 
   const handleLogout = () => {
