@@ -1,3 +1,8 @@
+export enum ROLE {
+  Admin = "Admin",
+  User = "User",
+}
+
 export const ARTICLES = [
   {
     src: "https://via.placeholder.com/100",
