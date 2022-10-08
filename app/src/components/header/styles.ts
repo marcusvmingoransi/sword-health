@@ -19,7 +19,3 @@ export const Img = styled.img`
   max-height: 100%;
   width: 60px;
 `;
-
-export const LinkStyled = styled(Link)`
-  text-decoration: none;
-`;

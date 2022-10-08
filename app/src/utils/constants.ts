@@ -1,7 +1,6 @@
-export enum ROLE {
-  Admin = "Admin",
-  User = "User",
-}
+import { Role } from "../models/models";
+
+export const ROLES = [Role.Administrator, Role.User] as Role[];
 
 export const ARTICLES = [
   {
